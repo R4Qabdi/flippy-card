@@ -5,7 +5,9 @@ extends Control
 func _ready() -> void:
 	RenderingServer.set_default_clear_color(Color("#1f1e33"))
 	
-	
+
+func delay(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

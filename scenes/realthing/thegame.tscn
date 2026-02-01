@@ -1,10 +1,150 @@
-[gd_scene load_steps=6 format=3 uid="uid://cngsw00o0btw3"]
+[gd_scene load_steps=26 format=3 uid="uid://cngsw00o0btw3"]
 
 [ext_resource type="Script" uid="uid://chvt6hfowpy8i" path="res://scenes/realthing/thegame.gd" id="1_qqrou"]
 [ext_resource type="Script" uid="uid://bnl5v3fxvn6to" path="res://scenes/realthing/opphand.gd" id="3_m2ej7"]
 [ext_resource type="Script" uid="uid://cdmis1plr3hat" path="res://scenes/realthing/cardhandler.gd" id="4_0e23b"]
 [ext_resource type="Script" uid="uid://cmnfot6oycmkt" path="res://scenes/realthing/playerhand.gd" id="4_m2ej7"]
 [ext_resource type="PackedScene" uid="uid://bkejwjk14tp6g" path="res://scenes/realthing/deck.tscn" id="4_sq6sj"]
+[ext_resource type="Texture2D" uid="uid://cpejbvliiqsyk" path="res://asset/ui/coinflip-Sheet.png" id="6_0e23b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e23b"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yulgv"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7yle"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7uj6"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0jpa"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmjih"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oyn6"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hf8lo"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl2kw"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpcnu"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3urje"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6cg3"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7mat"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqtc5"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo6de"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7nr2"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu714"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sinq2"]
+atlas = ExtResource("6_0e23b")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lpcnu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e23b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yulgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7yle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7uj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0jpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmjih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oyn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hf8lo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl2kw")
+}],
+"loop": true,
+"name": &"heads",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpcnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3urje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6cg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7mat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqtc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bo6de")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7nr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tu714")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sinq2")
+}],
+"loop": true,
+"name": &"tails",
+"speed": 12.0
+}]
 
 [node name="thegame" type="Control"]
 layout_mode = 3
@@ -23,13 +163,33 @@ scale = Vector2(2, 2)
 [node name="cardslot" type="Node2D" parent="."]
 
 [node name="foropp" type="Node2D" parent="cardslot"]
-position = Vector2(0, -16)
+position = Vector2(-36, 0)
 
 [node name="forplayer" type="Node2D" parent="cardslot"]
-position = Vector2(0, 16)
+position = Vector2(36, 0)
 
 [node name="cardhandler" type="Node2D" parent="."]
 script = ExtResource("4_0e23b")
 
 [node name="opphand" type="Node2D" parent="."]
 script = ExtResource("3_m2ej7")
+
+[node name="tutorlayer" type="CanvasLayer" parent="."]
+
+[node name="coinflip" type="Node2D" parent="."]
+visible = false
+
+[node name="playercoin" type="AnimatedSprite2D" parent="coinflip"]
+position = Vector2(112, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_lpcnu")
+animation = &"heads"
+
+[node name="oppcoin" type="AnimatedSprite2D" parent="coinflip"]
+position = Vector2(-112, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_lpcnu")
+animation = &"heads"
+
+[node name="sampah" type="Node2D" parent="."]
+position = Vector2(-288, -64)
