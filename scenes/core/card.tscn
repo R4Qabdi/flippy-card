@@ -1,7 +1,8 @@
-[gd_scene load_steps=61 format=3 uid="uid://dip5c3ffnata0"]
+[gd_scene load_steps=62 format=3 uid="uid://dip5c3ffnata0"]
 
-[ext_resource type="Script" uid="uid://cgbppg611mdix" path="res://scenes/cardo.gd" id="1_6u4wf"]
+[ext_resource type="Script" uid="uid://cgbppg611mdix" path="res://scenes/core/cardo.gd" id="1_6u4wf"]
 [ext_resource type="Texture2D" uid="uid://b0c6vaj6h0k6a" path="res://asset/cardset/smallc/SmallCdeck1to1-Qwenty.png" id="1_d81rb"]
+[ext_resource type="Texture2D" uid="uid://cui2n3trx3q86" path="res://asset/ui/selectmenu.png" id="2_1d3j5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6u4wf"]
 atlas = ExtResource("1_d81rb")
@@ -414,14 +415,19 @@ script = ExtResource("1_6u4wf")
 sprite_frames = SubResource("SpriteFrames_fg4qf")
 animation = &"textures"
 
-[node name="texture" type="Sprite2D" parent="."]
+[node name="hover" type="Sprite2D" parent="textures"]
+visible = false
+modulate = Color(0, 1, 1, 1)
+position = Vector2(-7.8678124e-07, 4.172325e-07)
+scale = Vector2(0.15, 0.15151516)
+texture = ExtResource("2_1d3j5")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="box" type="CollisionShape2D" parent="area"]
 shape = SubResource("RectangleShape2D_01co5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="area" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="area" to="." method="_on_area_2d_mouse_exited"]

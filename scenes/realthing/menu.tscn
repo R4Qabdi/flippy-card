@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://b373236v81n27"]
+
+[ext_resource type="Script" uid="uid://dbm0nfctrkxe3" path="res://scenes/realthing/mainmenu.gd" id="1_38son"]
+[ext_resource type="Texture2D" uid="uid://1yevllm4cx2n" path="res://asset/ui/something textlargen.png" id="2_ghr5c"]
+[ext_resource type="Texture2D" uid="uid://cui2n3trx3q86" path="res://asset/ui/selectmenu.png" id="3_jocsv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghr5c"]
+size = Vector2(182, 312)
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_38son")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("2_ghr5c")
+
+[node name="camera" type="Camera2D" parent="."]
+
+[node name="tutor" type="Area2D" parent="."]
+
+[node name="box" type="CollisionShape2D" parent="tutor"]
+position = Vector2(-205, 0)
+shape = SubResource("RectangleShape2D_ghr5c")
+
+[node name="select" type="Sprite2D" parent="tutor"]
+visible = false
+position = Vector2(-204, -2)
+texture = ExtResource("3_jocsv")
+
+[node name="Label" type="Label" parent="tutor"]
+offset_left = -278.0
+offset_top = 74.0
+offset_right = -142.0
+offset_bottom = 149.0
+text = "This tutorial will 
+show you how to 
+play this game."
+vertical_alignment = 1
+
+[node name="limine" type="Area2D" parent="."]
+
+[node name="box" type="CollisionShape2D" parent="limine"]
+shape = SubResource("RectangleShape2D_ghr5c")
+
+[node name="select" type="Sprite2D" parent="limine"]
+visible = false
+texture = ExtResource("3_jocsv")
+
+[node name="Label" type="Label" parent="limine"]
+offset_left = -76.0
+offset_top = 74.0
+offset_right = 76.0
+offset_bottom = 149.0
+text = "She plays random
+moves. 
+Easy to play against"
+vertical_alignment = 1
+
+[node name="reina" type="Area2D" parent="."]
+
+[node name="box" type="CollisionShape2D" parent="reina"]
+position = Vector2(205, 0)
+shape = SubResource("RectangleShape2D_ghr5c")
+
+[node name="select" type="Sprite2D" parent="reina"]
+visible = false
+position = Vector2(204, 0)
+texture = ExtResource("3_jocsv")
+
+[node name="Label" type="Label" parent="reina"]
+offset_left = 128.0
+offset_top = 76.0
+offset_right = 288.0
+offset_bottom = 125.0
+text = "She plans her moves.
+A tougher opponent"
+vertical_alignment = 1

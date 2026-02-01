@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://bkejwjk14tp6g"]
+
+[ext_resource type="Script" uid="uid://i1jelpa0ett2" path="res://scenes/realthing/deck.gd" id="1_b6cko"]
+[ext_resource type="Texture2D" uid="uid://lxpffxjvwwka" path="res://asset/cardset/smallc/decktodraw.png" id="1_d25l1"]
+[ext_resource type="Texture2D" uid="uid://cui2n3trx3q86" path="res://asset/ui/selectmenu.png" id="3_pm2vt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8gcs"]
+atlas = ExtResource("1_d25l1")
+region = Rect2(0, 0, 32, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6cko"]
+atlas = ExtResource("1_d25l1")
+region = Rect2(32, 0, 32, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm2vt"]
+atlas = ExtResource("1_d25l1")
+region = Rect2(64, 0, 32, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilm7x"]
+atlas = ExtResource("1_d25l1")
+region = Rect2(96, 0, 32, 52)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhbxl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8gcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6cko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm2vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilm7x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8doo"]
+size = Vector2(32, 52)
+
+[node name="deck" type="Node2D"]
+script = ExtResource("1_b6cko")
+
+[node name="hover" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 1, 1, 1)
+position = Vector2(-1.7881393e-07, -1.1920929e-06)
+scale = Vector2(0.17, 0.16363636)
+texture = ExtResource("3_pm2vt")
+
+[node name="textures" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dhbxl")
+
+[node name="area" type="Area2D" parent="."]
+
+[node name="box" type="CollisionShape2D" parent="area"]
+shape = SubResource("RectangleShape2D_e8doo")
+
+[node name="draw" type="Button" parent="."]
+visible = false
+offset_left = 18.0
+offset_top = -26.0
+offset_right = 69.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 8
+disabled = true
+text = "draw card?
+(-1)"
+
+[connection signal="mouse_entered" from="area" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="area" to="." method="_on_area_mouse_exited"]
+[connection signal="pressed" from="draw" to="." method="_on_draw_pressed"]

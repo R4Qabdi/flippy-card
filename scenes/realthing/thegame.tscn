@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cngsw00o0btw3"]
+
+[ext_resource type="Script" uid="uid://chvt6hfowpy8i" path="res://scenes/realthing/thegame.gd" id="1_qqrou"]
+[ext_resource type="Script" uid="uid://bnl5v3fxvn6to" path="res://scenes/realthing/opphand.gd" id="3_m2ej7"]
+[ext_resource type="Script" uid="uid://cdmis1plr3hat" path="res://scenes/realthing/cardhandler.gd" id="4_0e23b"]
+[ext_resource type="Script" uid="uid://cmnfot6oycmkt" path="res://scenes/realthing/playerhand.gd" id="4_m2ej7"]
+[ext_resource type="PackedScene" uid="uid://bkejwjk14tp6g" path="res://scenes/realthing/deck.tscn" id="4_sq6sj"]
+
+[node name="thegame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qqrou")
+
+[node name="camera" type="Camera2D" parent="."]
+
+[node name="playerhand" type="Node2D" parent="."]
+script = ExtResource("4_m2ej7")
+
+[node name="deck" parent="." instance=ExtResource("4_sq6sj")]
+position = Vector2(-288, 52)
+scale = Vector2(2, 2)
+
+[node name="cardslot" type="Node2D" parent="."]
+
+[node name="foropp" type="Node2D" parent="cardslot"]
+position = Vector2(0, -16)
+
+[node name="forplayer" type="Node2D" parent="cardslot"]
+position = Vector2(0, 16)
+
+[node name="cardhandler" type="Node2D" parent="."]
+script = ExtResource("4_0e23b")
+
+[node name="opphand" type="Node2D" parent="."]
+script = ExtResource("3_m2ej7")

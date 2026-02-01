@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://jmx8mgdfjcox"]
+
+[ext_resource type="Texture2D" uid="uid://cu3fhs5ofppvt" path="res://asset/ui/flippy cards prototype.png" id="1_3xxnu"]
+[ext_resource type="Script" uid="uid://dbm0nfctrkxe3" path="res://scenes/realthing/mainmenu.gd" id="1_ra62s"]
+
+[node name="mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ra62s")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3xxnu")
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2(320, 180)
+
+[node name="start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAY"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = 112.0
+offset_right = 48.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EXIT"
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
