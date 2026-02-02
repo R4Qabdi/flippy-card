@@ -21,3 +21,6 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("debug-m"):
 		print("jumlah kartu dalam deck : "+str(global.cards_in_deck_id.size()))
+	if Input.is_action_just_pressed("debug-n"):
+		print($playerhand.cards_in_opp_hand)
+		print($playerhand.cards_in_hand)
