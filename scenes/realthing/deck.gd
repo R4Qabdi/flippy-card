@@ -15,14 +15,13 @@ signal deckexithover
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed() and is_hover:
-			#print("keren")
-			$draw.visible = true
-			if global.playerpoint > 0 :
-				$draw.disabled = false
-			else : $draw.disabled = true
-		elif event.is_pressed():
-			$draw.visible = false
-			$draw.disabled = true
+			print("keren")
+			if $"../cardhandler".playercoins > 0 :
+				var randomfromdeck = randi_range(0, global.cards_in_deck_id.size()-1)
+				$"../playerhand".draw_card(global.cards_in_deck_id[randomfromdeck], 1)
+				$"../cardhandler".playercoins -= 1
+				$"../coinflip/point/Label".text = str($"../cardhandler".playercoins)
+
 
 func _on_area_mouse_entered() -> void:
 	#print("hover")
@@ -35,9 +34,3 @@ func _on_area_mouse_exited() -> void:
 	$hover.visible = false
 	emit_signal("deckexithover")
 	is_hover = false
-
-
-func _on_draw_pressed() -> void:
-	$draw.visible = false
-	$draw.disabled = true
-	global.playerpoint -= 1

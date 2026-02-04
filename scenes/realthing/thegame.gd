@@ -24,3 +24,10 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("debug-n"):
 		print($playerhand.cards_in_opp_hand)
 		print($playerhand.cards_in_hand)
+
+
+func _on_retry_pressed() -> void:
+	get_tree().reload_current_scene()
+
+func _on_return_pressed() -> void:
+	get_tree().change_scene_to_file.call_deferred("res://scenes/realthing/menu.tscn")

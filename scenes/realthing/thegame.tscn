@@ -1,7 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://cngsw00o0btw3"]
+[gd_scene load_steps=34 format=3 uid="uid://cngsw00o0btw3"]
 
 [ext_resource type="Script" uid="uid://chvt6hfowpy8i" path="res://scenes/realthing/thegame.gd" id="1_qqrou"]
 [ext_resource type="Script" uid="uid://bnl5v3fxvn6to" path="res://scenes/realthing/opphand.gd" id="3_m2ej7"]
+[ext_resource type="Texture2D" uid="uid://begcg6yngqh6q" path="res://asset/ui/coinicon.png" id="3_yulgv"]
 [ext_resource type="Script" uid="uid://cdmis1plr3hat" path="res://scenes/realthing/cardhandler.gd" id="4_0e23b"]
 [ext_resource type="Script" uid="uid://cmnfot6oycmkt" path="res://scenes/realthing/playerhand.gd" id="4_m2ej7"]
 [ext_resource type="PackedScene" uid="uid://bkejwjk14tp6g" path="res://scenes/realthing/deck.tscn" id="4_sq6sj"]
@@ -256,6 +257,78 @@ tracks/8/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("options/result:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-240, -464)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("options/result:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("options/result:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("options/option:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24, -400)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("options/option:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("options/option:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_o7uj6"]
 resource_name = "both"
@@ -374,11 +447,92 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_w0jpa"]
+resource_name = "result"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("options/result:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-240, -128), Vector2(-240, -128)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("options/result:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("options/result:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_lmjih"]
+resource_name = "question"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("options/option:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("options/option:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("options/option:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(32, -32), Vector2(32, -64)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w0jpa"]
 _data = {
 &"RESET": SubResource("Animation_yulgv"),
 &"both": SubResource("Animation_o7uj6"),
 &"opp": SubResource("Animation_d7yle"),
+&"question": SubResource("Animation_lmjih"),
+&"result": SubResource("Animation_w0jpa"),
 &"you": SubResource("Animation_0e23b")
 }
 
@@ -386,6 +540,34 @@ _data = {
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_qqrou")
+
+[node name="coinflip" type="Node2D" parent="."]
+
+[node name="playercoin" type="AnimatedSprite2D" parent="coinflip"]
+position = Vector2(112, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_lpcnu")
+animation = &"tails"
+
+[node name="oppcoin" type="AnimatedSprite2D" parent="coinflip"]
+position = Vector2(-112, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_lpcnu")
+animation = &"heads"
+
+[node name="point" type="Sprite2D" parent="coinflip"]
+position = Vector2(296, 156)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_yulgv")
+
+[node name="Label" type="Label" parent="coinflip/point"]
+offset_left = -56.0
+offset_top = -16.0
+offset_right = -16.0
+offset_bottom = 16.0
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="camera" type="Camera2D" parent="."]
 
@@ -412,20 +594,6 @@ script = ExtResource("3_m2ej7")
 
 [node name="tutorlayer" type="CanvasLayer" parent="."]
 
-[node name="coinflip" type="Node2D" parent="."]
-
-[node name="playercoin" type="AnimatedSprite2D" parent="coinflip"]
-position = Vector2(112, 0)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_lpcnu")
-animation = &"tails"
-
-[node name="oppcoin" type="AnimatedSprite2D" parent="coinflip"]
-position = Vector2(-112, 0)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_lpcnu")
-animation = &"heads"
-
 [node name="sampah" type="Node2D" parent="."]
 position = Vector2(-288, -64)
 
@@ -439,6 +607,7 @@ offset_left = 152.0
 offset_top = -12.0
 offset_right = 296.0
 offset_bottom = 28.0
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="options/you"]
 layout_mode = 0
@@ -455,6 +624,7 @@ offset_left = -296.0
 offset_top = -12.0
 offset_right = -152.0
 offset_bottom = 28.0
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="options/opp"]
 layout_mode = 0
@@ -471,6 +641,7 @@ offset_left = -72.0
 offset_top = -12.0
 offset_right = 72.0
 offset_bottom = 28.0
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="options/both"]
 layout_mode = 1
@@ -482,7 +653,85 @@ switch cards anjay"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="result" type="Panel" parent="options"]
+visible = false
+layout_mode = 0
+offset_left = -240.0
+offset_top = -464.0
+offset_right = 240.0
+offset_bottom = -240.0
+
+[node name="Label" type="Label" parent="options/result"]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 480.0
+offset_bottom = 97.0
+text = "you just lost blud
+pack it up"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="retry" type="Button" parent="options/result"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 144.0
+offset_right = 192.0
+offset_bottom = 176.0
+text = "RETRY"
+
+[node name="return" type="Button" parent="options/result"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 144.0
+offset_right = 416.0
+offset_bottom = 176.0
+text = "RETURN"
+
+[node name="option" type="Panel" parent="options"]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = -400.0
+offset_right = 200.0
+offset_bottom = -272.0
+
+[node name="Label" type="Label" parent="options/option"]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 12
+text = "do you want to
+destroy opponent's card?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="yes" type="Button" parent="options/option"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 64.0
+offset_right = 152.0
+offset_bottom = 96.0
+text = "YES"
+
+[node name="no" type="Button" parent="options/option"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 96.0
+offset_right = 152.0
+offset_bottom = 128.0
+text = "NO"
+
 [node name="anim" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_w0jpa")
 }
+
+[node name="animdec" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w0jpa")
+}
+
+[connection signal="pressed" from="options/result/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="options/result/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="options/option/yes" to="cardhandler" method="_on_yes_pressed"]
+[connection signal="pressed" from="options/option/no" to="cardhandler" method="_on_no_pressed"]

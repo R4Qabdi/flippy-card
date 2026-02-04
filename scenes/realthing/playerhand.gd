@@ -10,10 +10,12 @@ const MARGIN_X =0
 var viewport_rect_x
 
 func _ready() -> void:
+	randomize()
 	#draw 5 cards to player
 	for n in range(5):
 		var randomfromdeck = randi_range(0, global.cards_in_deck_id.size()-1)
 		draw_card(global.cards_in_deck_id[randomfromdeck], 1)
+		#draw_card(1,1)
 		global.playerhand = cards_in_hand
 		global.cards_in_deck_id.pop_at(randomfromdeck)
 		await delay(0.2)
