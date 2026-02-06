@@ -78,9 +78,9 @@ func _ready() -> void:
 		$textures.frame = 55
 	print(CARD_DATA[str(id)]["value"])
 	value = CARD_DATA[str(id)]["value"]
-	if value in range(2,4):
+	if value >= 2 and value <= 5:
 		points = 1
-	elif value in range(5,9):
+	elif value >=6 and value <= 9:
 		points = 2
 	elif value == 10:
 		points =3
@@ -88,6 +88,7 @@ func _ready() -> void:
 		points = 4
 
 func _on_area_2d_mouse_entered() -> void:
+	#print("cmonman")
 	if selectable:
 		$textures/hover.visible = true
 		#print("emit hover")

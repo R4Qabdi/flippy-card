@@ -61,5 +61,8 @@ sprite_frames = SubResource("SpriteFrames_dhbxl")
 [node name="box" type="CollisionShape2D" parent="area"]
 shape = SubResource("RectangleShape2D_e8doo")
 
+[node name="cooldown" type="Timer" parent="."]
+
 [connection signal="mouse_entered" from="area" to="." method="_on_area_mouse_entered"]
 [connection signal="mouse_exited" from="area" to="." method="_on_area_mouse_exited"]
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

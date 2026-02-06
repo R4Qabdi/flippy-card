@@ -8,19 +8,37 @@ const deck = [
 ]
 var list_of_cards = deck
 var is_hover = false
+var on_cooldown = false
 
 signal deckhover
 signal deckexithover
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.is_pressed() and is_hover:
-			print("keren")
-			if $"../cardhandler".playercoins > 0 :
-				var randomfromdeck = randi_range(0, global.cards_in_deck_id.size()-1)
-				$"../playerhand".draw_card(global.cards_in_deck_id[randomfromdeck], 1)
-				$"../cardhandler".playercoins -= 1
-				$"../coinflip/point/Label".text = str($"../cardhandler".playercoins)
+		if event.is_pressed() and is_hover and !on_cooldown:
+			if global.cards_in_deck_id.size() > 0:
+				if global.cards_in_deck_id.size() >= 39 and global.cards_in_deck_id.size() <= 52:
+					$textures.frame = 0
+				elif global.cards_in_deck_id.size() >= 26 and global.cards_in_deck_id.size() <= 38:
+					$textures.frame = 1
+				elif global.cards_in_deck_id.size() >= 13 and global.cards_in_deck_id.size() <= 25:
+					$textures.frame = 2
+				elif global.cards_in_deck_id.size() >= 1 and global.cards_in_deck_id.size() <= 13:
+					$textures.frame = 3
+				if $"../cardhandler".playercoins > 0 :
+					var randomfromdeck = randi_range(0, global.cards_in_deck_id.size()-1)
+					$"../playerhand".draw_card(global.cards_in_deck_id[randomfromdeck], 1)
+					$"../cardhandler".playercoins -= 1
+					$"../playerhand".enable_cards()
+					$"../coinflip/point/Label".text = str($"../cardhandler".playercoins)
+					$cooldown.start(0.2)
+					$"../options/both/Label".text = "-1 coin"
+					$"../anim".queue("ondeck")
+					on_cooldown=true
+				else:
+					$"../options/both/Label".text = "not enough coins"
+					$"../anim".queue("ondeck")
+			else: self.visible = false
 
 
 func _on_area_mouse_entered() -> void:
@@ -34,3 +52,7 @@ func _on_area_mouse_exited() -> void:
 	$hover.visible = false
 	emit_signal("deckexithover")
 	is_hover = false
+
+func _on_cooldown_timeout() -> void:
+	on_cooldown=false
+	

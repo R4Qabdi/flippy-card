@@ -18,9 +18,12 @@ func _process(delta: float) -> void:
 	var jarak = mouseloc.distance_to(cameraloc)
 	var arah = mouseloc.direction_to(cameraloc)
 	$camera.position = arah*(clamp(jarak, 0, 400)/50) 
-	
+	#print_tree_pretty()
+	if Input.is_action_just_pressed("esc"):
+		get_tree().change_scene_to_file("res://scenes/realthing/menu.tscn")
 	if Input.is_action_just_pressed("debug-m"):
 		print("jumlah kartu dalam deck : "+str(global.cards_in_deck_id.size()))
+		print_tree_pretty()
 	if Input.is_action_just_pressed("debug-n"):
 		print($playerhand.cards_in_opp_hand)
 		print($playerhand.cards_in_hand)

@@ -39,9 +39,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
 			var card = mouse_raycast()
-			
 			#print(card)
-				
 			if card :
 				if situation == "player steal card" or situation =="player destroy and steal card":
 					$"../playerhand".cards_in_opp_hand.erase(card)
@@ -74,9 +72,11 @@ func _input(event: InputEvent) -> void:
 func coinflip():
 	var cfp = randi_range(0,1)
 	var cfo = randi_range(0,1)
+	#cfp = 1
+	#cfo = 0
 	print(str(cfp) + "-" + str(cfo))
-	print(playerbettedcard)
-	print(oppbettedcard)
+	#print(playerbettedcard)
+	#print(oppbettedcard)
 	playerbettedcard.get_node("textures").position.y = 0
 	oppbettedcard.get_node("textures").position.y = 0
 	#$"../coinflip".visible = true
@@ -151,11 +151,50 @@ func coinflip():
 
 	if !cfp and cfo:
 		notif("you lose",str(oppbettedcard.points),"opponent")
-		slide(playerbettedcard, playerbettedcard.position, $"../sampah".position, 0.2)
+		#slide(playerbettedcard, playerbettedcard.position, $"../sampah".position, 0.2)
 		#slide(oppbettedcard, oppbettedcard.position, $"../sampah".position, 0.2)
 		oppbettedcard.change_facing()
 		$"../playerhand".cards_in_opp_hand.append(oppbettedcard)
 		$"../playerhand".update_new_card_pos_for_opp()
+		$"../anim".play("RESET")
+		#RAAAHHH THIS IS WHERE I ADDED A NEW FEATURE FOR THE OPP WIN CONDITION
+		#hmmm idk, maybe starts with who playing it
+		if get_parent().name == "limine" :
+			if oppbettedcard.points == 1:
+				print("anjay selebew")
+				slide(playerbettedcard, playerbettedcard.position, $"../sampah".position, 0.2)
+				
+			elif oppbettedcard.points == 2:
+				playerbettedcard.change_facing()
+				$"../playerhand".cards_in_opp_hand.append(playerbettedcard)
+				$"../playerhand".update_new_card_pos_for_opp()
+				
+			elif oppbettedcard.points == 3:
+				$"../playerhand".cards_in_hand.append(playerbettedcard)
+				#playerbettedcard.change_facing()
+				$"../playerhand".update_new_card_pos()
+				await delay(1)
+				if $"../playerhand".cards_in_hand.size() > 0:
+					var randomcard = $"../playerhand".cards_in_hand.pick_random()
+					randomcard.change_facing()
+					$"../playerhand".cards_in_opp_hand.append(randomcard)
+					$"../playerhand".cards_in_hand.erase(randomcard)
+				$"../playerhand".update_new_card_pos()
+				$"../playerhand".update_new_card_pos_for_opp()
+				
+			elif oppbettedcard.points == 4:
+				slide(playerbettedcard, playerbettedcard.position, $"../sampah".position, 0.2)
+				await delay(1)
+				if $"../playerhand".cards_in_hand.size() > 0:
+					var randomcard = $"../playerhand".cards_in_hand.pick_random()
+					randomcard.change_facing()
+					$"../playerhand".cards_in_opp_hand.append(randomcard)
+					$"../playerhand".cards_in_hand.erase(randomcard)
+				$"../playerhand".update_new_card_pos()
+				$"../playerhand".update_new_card_pos_for_opp()
+			else:
+				slide(playerbettedcard, playerbettedcard.position, $"../sampah".position, 0.2)
+		else: print("limine lagi ga main woilah wkwkwkwkw")
 		checkwin()
 		
 
@@ -186,10 +225,12 @@ func disable_all_cards():
 func _on_yes_pressed() -> void:
 	player_decision(true)
 	$"../anim".play_backwards("question")
+	$"../anim".queue("RESET")
 
 func _on_no_pressed() -> void:
 	player_decision(false)
 	$"../anim".play_backwards("question")
+	$"../anim".queue("RESET")
 
 func player_decision(agree):
 	match situation:
@@ -232,6 +273,7 @@ func player_decision(agree):
 					n.selectable = true
 				checkwin()
 			else:
+				situation = "fek"
 				for n in $"../playerhand".cards_in_hand:
 					n.selectable = true
 				#$"../playerhand".cards_in_opp_hand.append(oppbettedcard)
@@ -248,13 +290,15 @@ func player_decision(agree):
 					n.selectable = true
 				checkwin()
 			else:
+				situation = "fek"
 				for n in $"../playerhand".cards_in_hand:
 					n.selectable = true
+				$"../playerhand".cards_in_opp_hand.append(oppbettedcard)
 				oppbettedcard.change_facing()
 				#$"../playerhand".cards_in_opp_hand.append(oppbettedcard)
 				$"../playerhand".update_new_card_pos_for_opp()
 	$"../coinflip/point/Label".text = str(playercoins)
-	
+
 
 func winner():
 	print("you are winnaa")
@@ -323,6 +367,7 @@ func mouse_raycast():
 	parameters.collision_mask = MOUSE_RAY_MASK
 	var result = space_state.intersect_point(parameters)
 	if result.size() > 0 :
+		print(result)
 		if result[0].collider.get_parent().selectable:
 			return result[0].collider.get_parent()
 	return null
