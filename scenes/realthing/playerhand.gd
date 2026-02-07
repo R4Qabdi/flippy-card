@@ -8,7 +8,7 @@ const HAND_XPOS_OFFSET = 100
 const HAND_YPOS_OFFSET_OPP = -125
 const MARGIN_X =0
 
-const DRAW_AMOUNT = 26
+const DRAW_AMOUNT = 8
 
 var viewport_rect_x
 
@@ -82,6 +82,11 @@ func update_new_card_pos():
 		#print("-------"+str(cards_in_hand.size())+"---------")
 		#print(x_offset)
 		#print("kartu biasa")
+		#ganti anunya biar bisa dia di ambil tanpa ambil yang lain aduhai
+		var ukuran 
+		if cards_in_hand.size()>0:
+			#print(cards_in_hand[cards_in_hand.size()-1])
+			cards_in_hand[cards_in_hand.size()-1].change_area_size(12)
 		slide(cards_in_hand[i],cards_in_hand[i].position,finalpos,0.2)
 		
 func update_new_card_pos_for_opp():

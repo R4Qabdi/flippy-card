@@ -111,6 +111,9 @@ func change_facing():
 	else:
 		$textures.frame = 55
 
+func change_area_size(width):
+	$area/box.shape.size.x=width 
+
 func slide(node, from, to, duration) -> Tween:
 	node.position = from
 	var tween = create_tween()
