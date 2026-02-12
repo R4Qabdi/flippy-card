@@ -1,0 +1,1143 @@
+[gd_scene format=3 uid="uid://dgyv2colcf3hg"]
+
+[ext_resource type="Script" uid="uid://du3dg7soqry1l" path="res://scenes/realthing/tutorial.gd" id="1_t1e66"]
+[ext_resource type="Texture2D" uid="uid://lxpffxjvwwka" path="res://asset/cardset/smallc/decktodraw.png" id="1_yw1lw"]
+[ext_resource type="Texture2D" uid="uid://b0c6vaj6h0k6a" path="res://asset/cardset/smallc/SmallCdeck1to1-Qwenty.png" id="2_8b01i"]
+[ext_resource type="Texture2D" uid="uid://cpejbvliiqsyk" path="res://asset/ui/coinflip-Sheet.png" id="3_tssbi"]
+[ext_resource type="Texture2D" uid="uid://begcg6yngqh6q" path="res://asset/ui/coinicon.png" id="4_t1e66"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8gcs"]
+atlas = ExtResource("1_yw1lw")
+region = Rect2(0, 0, 32, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6cko"]
+atlas = ExtResource("1_yw1lw")
+region = Rect2(32, 0, 32, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm2vt"]
+atlas = ExtResource("1_yw1lw")
+region = Rect2(64, 0, 32, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilm7x"]
+atlas = ExtResource("1_yw1lw")
+region = Rect2(96, 0, 32, 52)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8b01i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8gcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6cko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm2vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilm7x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u4wf"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(364, 144, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktuci"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(0, 0, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kg30u"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(28, 0, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy11y"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(56, 0, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ligt"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(84, 0, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8w5pg"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(112, 0, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvopj"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(140, 0, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yd6c"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(168, 0, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we8pq"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(196, 0, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wvaf"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(224, 0, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8dfr"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(252, 0, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpf3o"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(280, 0, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42b55"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(308, 0, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjciw"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(336, 0, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54seb"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(0, 48, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v23hl"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(28, 48, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ydx5"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(56, 48, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuy1i"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(84, 48, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rywyy"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(112, 48, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_le4ky"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(140, 48, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_125j1"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(168, 48, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b834i"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(196, 48, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07urr"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(224, 48, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l85n3"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(252, 48, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d501"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(280, 48, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jye5o"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(308, 48, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uw8p"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(336, 48, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yof7m"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(0, 96, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4f1a"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(28, 96, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s05jc"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(56, 96, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jtkw"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(84, 96, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bydv"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(112, 96, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xgn1"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(140, 96, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khodh"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(168, 96, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_io472"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(196, 96, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ymqw"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(224, 96, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sve0p"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(252, 96, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yemd"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(280, 96, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toyc6"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(308, 96, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td3mm"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(336, 96, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wwa5"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(0, 144, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahiq2"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(28, 144, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_443pj"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(56, 144, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5267i"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(84, 144, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2kh0"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(112, 144, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baheg"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(140, 144, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b2o8"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(168, 144, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3638"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(196, 144, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7i1g"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(224, 144, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65htv"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(252, 144, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qug21"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(280, 144, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lx7rd"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(308, 144, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5v2s"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(336, 144, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i27o"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(364, 0, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7avg"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(364, 48, 28, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17cq0"]
+atlas = ExtResource("2_8b01i")
+region = Rect2(364, 96, 28, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x2ngx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6u4wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktuci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kg30u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sy11y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ligt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8w5pg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvopj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yd6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we8pq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wvaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8dfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpf3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42b55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjciw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54seb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v23hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ydx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuy1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rywyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_le4ky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_125j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b834i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07urr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l85n3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d501")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jye5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uw8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yof7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4f1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s05jc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jtkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bydv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xgn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khodh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io472")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ymqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sve0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yemd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toyc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td3mm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wwa5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahiq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_443pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5267i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2kh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baheg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b2o8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3638")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7i1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65htv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qug21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lx7rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5v2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i27o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7avg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17cq0")
+}],
+"loop": false,
+"name": &"textures",
+"speed": 0.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e23b"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yulgv"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7yle"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7uj6"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0jpa"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmjih"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oyn6"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hf8lo"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl2kw"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpcnu"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3urje"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6cg3"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7mat"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqtc5"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo6de"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7nr2"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu714"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sinq2"]
+atlas = ExtResource("3_tssbi")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_meadr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e23b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yulgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7yle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7uj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0jpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmjih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1oyn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hf8lo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl2kw")
+}],
+"loop": true,
+"name": &"heads",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpcnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3urje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6cg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7mat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqtc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bo6de")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7nr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tu714")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sinq2")
+}],
+"loop": true,
+"name": &"tails",
+"speed": 12.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tssbi"]
+bg_color = Color(0, 0.0627451, 0.16862746, 0.9411765)
+
+[node name="tutorial" type="Control" unique_id=678631457]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t1e66")
+
+[node name="camera" type="Camera2D" parent="." unique_id=1873140687]
+
+[node name="deck" type="AnimatedSprite2D" parent="." unique_id=195057196]
+visible = false
+position = Vector2(32, 288)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_8b01i")
+
+[node name="cards" type="Node2D" parent="." unique_id=867513976]
+visible = false
+scale = Vector2(2, 2)
+
+[node name="card" type="AnimatedSprite2D" parent="cards" unique_id=369411536]
+position = Vector2(102, 152)
+sprite_frames = SubResource("SpriteFrames_x2ngx")
+animation = &"textures"
+frame = 37
+
+[node name="card2" type="AnimatedSprite2D" parent="cards" unique_id=2056794328]
+position = Vector2(134, 152)
+sprite_frames = SubResource("SpriteFrames_x2ngx")
+animation = &"textures"
+frame = 20
+
+[node name="card3" type="AnimatedSprite2D" parent="cards" unique_id=1655690646]
+position = Vector2(166, 152)
+sprite_frames = SubResource("SpriteFrames_x2ngx")
+animation = &"textures"
+frame = 52
+
+[node name="card4" type="AnimatedSprite2D" parent="cards" unique_id=412962041]
+position = Vector2(198, 152)
+sprite_frames = SubResource("SpriteFrames_x2ngx")
+animation = &"textures"
+frame = 12
+
+[node name="card5" type="AnimatedSprite2D" parent="cards" unique_id=756463383]
+position = Vector2(230, 152)
+sprite_frames = SubResource("SpriteFrames_x2ngx")
+animation = &"textures"
+frame = 3
+
+[node name="card6" type="AnimatedSprite2D" parent="cards" unique_id=1643104154]
+position = Vector2(142, 28)
+sprite_frames = SubResource("SpriteFrames_x2ngx")
+animation = &"textures"
+frame = 55
+
+[node name="card7" type="AnimatedSprite2D" parent="cards" unique_id=1371148640]
+position = Vector2(174, 28)
+sprite_frames = SubResource("SpriteFrames_x2ngx")
+animation = &"textures"
+frame = 55
+
+[node name="card8" type="AnimatedSprite2D" parent="cards" unique_id=1192358311]
+position = Vector2(206, 28)
+sprite_frames = SubResource("SpriteFrames_x2ngx")
+animation = &"textures"
+frame = 55
+
+[node name="card9" type="AnimatedSprite2D" parent="cards" unique_id=122523823]
+position = Vector2(238, 28)
+sprite_frames = SubResource("SpriteFrames_x2ngx")
+animation = &"textures"
+frame = 55
+
+[node name="card10" type="AnimatedSprite2D" parent="cards" unique_id=1606634679]
+position = Vector2(270, 28)
+sprite_frames = SubResource("SpriteFrames_x2ngx")
+animation = &"textures"
+frame = 55
+
+[node name="coinflip" type="Node2D" parent="." unique_id=1065384029]
+position = Vector2(320, 180)
+
+[node name="playercoin" type="AnimatedSprite2D" parent="coinflip" unique_id=322297207]
+position = Vector2(112, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_meadr")
+animation = &"tails"
+
+[node name="oppcoin" type="AnimatedSprite2D" parent="coinflip" unique_id=451064159]
+position = Vector2(-112, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_meadr")
+animation = &"heads"
+
+[node name="point" type="Sprite2D" parent="coinflip" unique_id=510169296]
+position = Vector2(296, 156)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_t1e66")
+
+[node name="Label" type="Label" parent="coinflip/point" unique_id=687585287]
+offset_left = -56.0
+offset_top = -16.0
+offset_right = -16.0
+offset_bottom = 16.0
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=701873744]
+visible = false
+layout_mode = 0
+offset_left = 144.0
+offset_top = 84.0
+offset_right = 496.0
+offset_bottom = 276.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tssbi")
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=520957487]
+layout_mode = 0
+offset_top = 12.0
+offset_right = 352.0
+offset_bottom = 40.0
+text = "WELCOME TO FLIPPY CARD!
+"
+fit_content = true
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Panel" unique_id=584351190]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 44.0
+offset_right = 56.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 12
+text = "This is a playing card game where a flip of a coin can 
+will and determine your skill of the game
+
+
+"
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="Panel" unique_id=522368104]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 156.0
+offset_right = 345.0
+offset_bottom = 192.0
+text = "Press any key to continue..."
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Panel2" type="Panel" parent="." unique_id=1962971704]
+visible = false
+layout_mode = 0
+offset_left = 144.0
+offset_top = 112.0
+offset_right = 496.0
+offset_bottom = 248.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tssbi")
+
+[node name="Label" type="Label" parent="Panel2" unique_id=371700848]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 337.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 12
+text = "At the start of the game, you and your opponent will be
+drawn 5 cards.  "
+
+[node name="Label2" type="Label" parent="Panel2" unique_id=55713435]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 100.0
+offset_right = 343.0
+offset_bottom = 136.0
+text = "Press any key to continue..."
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Panel22" type="Panel" parent="." unique_id=598460440]
+visible = false
+layout_mode = 0
+offset_left = 332.0
+offset_top = 80.0
+offset_right = 572.0
+offset_bottom = 272.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tssbi")
+
+[node name="Label" type="Label" parent="Panel22" unique_id=524822621]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 229.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 12
+text = "Each card belongs to a different Tier.
+
+2-5: Low Cards
+6-9: Mid Cards
+10-K: High Cards
+Ace: Ace Cards
+Suits doesn't matter"
+
+[node name="Label2" type="Label" parent="Panel22" unique_id=1987050163]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 154.0
+offset_right = 233.0
+offset_bottom = 190.0
+text = "Press any key to continue..."
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="card" type="AnimatedSprite2D" parent="Panel22" unique_id=594074605]
+position = Vector2(-263, -28)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_x2ngx")
+animation = &"textures"
+frame = 40
+
+[node name="card2" type="AnimatedSprite2D" parent="Panel22" unique_id=1750070476]
+position = Vector2(-263, 212)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_x2ngx")
+animation = &"textures"
+frame = 17
+
+[node name="card3" type="AnimatedSprite2D" parent="Panel22" unique_id=929299186]
+position = Vector2(-263, 132)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_x2ngx")
+animation = &"textures"
+frame = 45
+
+[node name="card4" type="AnimatedSprite2D" parent="Panel22" unique_id=2008264488]
+position = Vector2(-263, 52)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_x2ngx")
+animation = &"textures"
+frame = 12
+
+[node name="Label3" type="Label" parent="Panel22" unique_id=1666622227]
+layout_mode = 0
+offset_left = -204.0
+offset_top = -44.0
+offset_right = -164.0
+offset_bottom = -21.0
+text = "<-- Ace tier"
+
+[node name="Label4" type="Label" parent="Panel22" unique_id=40951636]
+layout_mode = 0
+offset_left = -204.0
+offset_top = 28.0
+offset_right = -113.0
+offset_bottom = 51.0
+text = "<-- High tier"
+
+[node name="Label5" type="Label" parent="Panel22" unique_id=1288627167]
+layout_mode = 0
+offset_left = -204.0
+offset_top = 112.0
+offset_right = -113.0
+offset_bottom = 135.0
+text = "<-- Mid tier"
+
+[node name="Label6" type="Label" parent="Panel22" unique_id=1000808898]
+layout_mode = 0
+offset_left = -204.0
+offset_top = 190.0
+offset_right = -113.0
+offset_bottom = 213.0
+text = "<-- low tier"
+
+[node name="Panel3" type="Panel" parent="." unique_id=777039927]
+visible = false
+layout_mode = 0
+offset_left = 144.0
+offset_top = 112.0
+offset_right = 496.0
+offset_bottom = 248.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tssbi")
+
+[node name="Label" type="Label" parent="Panel3" unique_id=2065234141]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 337.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 12
+text = "Pick one card that you are willing to bet. Your
+opponent will bet their own card right after."
+
+[node name="Label2" type="Label" parent="Panel3" unique_id=1054223783]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 100.0
+offset_right = 343.0
+offset_bottom = 136.0
+text = "Press any key to continue..."
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Panel4" type="Panel" parent="." unique_id=1766466566]
+visible = false
+layout_mode = 0
+offset_left = 134.0
+offset_top = 222.0
+offset_right = 506.0
+offset_bottom = 358.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tssbi")
+
+[node name="Label" type="Label" parent="Panel4" unique_id=427649490]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 337.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 12
+text = "Both you and your opponent will automatically flip a coin. 
+This will determine whether you'll win or lose the bet
+"
+
+[node name="Label2" type="Label" parent="Panel4" unique_id=832822137]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 100.0
+offset_right = 343.0
+offset_bottom = 136.0
+text = "Press any key to continue..."
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel4" unique_id=37622586]
+layout_mode = 0
+offset_left = 344.0
+offset_top = -64.0
+offset_right = 455.0
+offset_bottom = -47.0
+theme_override_font_sizes/font_size = 12
+text = "<-- This is your coin"
+
+[node name="Label4" type="Label" parent="Panel4" unique_id=1983533996]
+layout_mode = 0
+offset_left = -84.0
+offset_top = -66.0
+offset_right = 99.0
+offset_bottom = -29.0
+theme_override_font_sizes/font_size = 12
+text = "This is your 
+opponent's coin  -->"
+
+[node name="Panel5" type="Panel" parent="." unique_id=1812191994]
+visible = false
+layout_mode = 0
+offset_left = 118.0
+offset_top = 210.0
+offset_right = 522.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tssbi")
+
+[node name="Label" type="Label" parent="Panel5" unique_id=1630613780]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 337.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 12
+text = "Heads means you win
+Tails means you lose
+
+if both cards wins, you will switch your card with your opponent
+if both cards loses, both cards will be destroyed"
+
+[node name="Label2" type="Label" parent="Panel5" unique_id=1934953881]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 112.0
+offset_right = 391.0
+offset_bottom = 148.0
+text = "Press any key to continue..."
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel5" unique_id=2021612162]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -48.0
+offset_right = 42.0
+offset_bottom = -25.0
+text = "win -->"
+
+[node name="Label4" type="Label" parent="Panel5" unique_id=1865307817]
+layout_mode = 0
+offset_left = 362.0
+offset_top = -44.0
+offset_right = 414.0
+offset_bottom = -21.0
+text = "<-- lose"
+
+[node name="Panel6" type="Panel" parent="." unique_id=1039910369]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = 208.0
+offset_right = 576.0
+offset_bottom = 358.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tssbi")
+
+[node name="Label" type="Label" parent="Panel6" unique_id=413682920]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 384.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 12
+text = "If you win and the other loses, you can choose to get coins or do
+actions based on the card's tier.
+Low cards = destroy card or 1 coin
+Mid cards = take card or 2 coins
+High cards = steal card or 3 coins
+Ace cards = steal and destroy card or 4 coins"
+
+[node name="Label2" type="Label" parent="Panel6" unique_id=1933786439]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 110.0
+offset_right = 507.0
+offset_bottom = 146.0
+text = "Press any key to continue..."
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel6" unique_id=547874082]
+layout_mode = 0
+offset_left = 42.0
+offset_top = -46.0
+offset_right = 94.0
+offset_bottom = -23.0
+text = "win -->"
+
+[node name="Label4" type="Label" parent="Panel6" unique_id=157862296]
+layout_mode = 0
+offset_left = 414.0
+offset_top = -48.0
+offset_right = 469.0
+offset_bottom = -25.0
+text = "<-- lose"
+
+[node name="Panel7" type="Panel" parent="." unique_id=1840584306]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = 226.0
+offset_right = 576.0
+offset_bottom = 336.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tssbi")
+
+[node name="Label" type="Label" parent="Panel7" unique_id=688957970]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 384.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 12
+text = "Same goes to your opponent, if your opponent wins the bet and you lost. Your 
+opponent can either choose between taking action or just simply take coins"
+
+[node name="Label2" type="Label" parent="Panel7" unique_id=1252406583]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 74.0
+offset_right = 507.0
+offset_bottom = 110.0
+text = "Press any key to continue..."
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel7" unique_id=1288046751]
+layout_mode = 0
+offset_left = 44.0
+offset_top = -66.0
+offset_right = 96.0
+offset_bottom = -43.0
+text = "win -->"
+
+[node name="Label4" type="Label" parent="Panel7" unique_id=514318420]
+layout_mode = 0
+offset_left = 416.0
+offset_top = -66.0
+offset_right = 471.0
+offset_bottom = -43.0
+text = "<-- lose"
+
+[node name="Panel8" type="Panel" parent="." unique_id=31112325]
+visible = false
+layout_mode = 0
+offset_left = 238.0
+offset_top = 250.0
+offset_right = 576.0
+offset_bottom = 358.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tssbi")
+
+[node name="Label" type="Label" parent="Panel8" unique_id=1364216564]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 321.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 12
+text = "You can spend your coins to draw a card on the deck"
+
+[node name="Label2" type="Label" parent="Panel8" unique_id=396554312]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 66.0
+offset_right = 321.0
+offset_bottom = 102.0
+text = "Press any key to continue..."
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Panel9" type="Panel" parent="." unique_id=1064176242]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = 208.0
+offset_right = 576.0
+offset_bottom = 358.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tssbi")
+
+[node name="Label" type="Label" parent="Panel9" unique_id=2020808899]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 384.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 12
+text = "You win by emptying your opponents hand so they have no cards to bet on
+
+end of tutorial
+Have fun!"
+
+[node name="Label2" type="Label" parent="Panel9" unique_id=2020668495]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 110.0
+offset_right = 507.0
+offset_bottom = 146.0
+text = "Press any key to continue..."
+horizontal_alignment = 2
+vertical_alignment = 1

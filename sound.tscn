@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dc6kbwy1mjehd"]
+
+[ext_resource type="AudioStream" uid="uid://cb83qkhhn4ifk" path="res://asset/sounds/Story For Money #19 - Orchestrated.WAV" id="1_3j8lq"]
+[ext_resource type="Script" uid="uid://bphva71pcvbko" path="res://sound.gd" id="1_7ywqe"]
+
+[node name="sound" type="Node2D" unique_id=326042929]
+script = ExtResource("1_7ywqe")
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=200785539]
+stream = ExtResource("1_3j8lq")
+autoplay = true
+bus = &"music"
+
+[node name="sfx" type="AudioStreamPlayer" parent="." unique_id=498919097]
+bus = &"sfx"

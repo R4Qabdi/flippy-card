@@ -1,12 +1,13 @@
-[gd_scene load_steps=35 format=3 uid="uid://cngsw00o0btw3"]
+[gd_scene format=3 uid="uid://cngsw00o0btw3"]
 
 [ext_resource type="Script" uid="uid://chvt6hfowpy8i" path="res://scenes/realthing/thegame.gd" id="1_qqrou"]
-[ext_resource type="Script" uid="uid://bnl5v3fxvn6to" path="res://scenes/realthing/opphand.gd" id="3_m2ej7"]
 [ext_resource type="Texture2D" uid="uid://begcg6yngqh6q" path="res://asset/ui/coinicon.png" id="3_yulgv"]
 [ext_resource type="Script" uid="uid://cdmis1plr3hat" path="res://scenes/realthing/cardhandler.gd" id="4_0e23b"]
 [ext_resource type="Script" uid="uid://cmnfot6oycmkt" path="res://scenes/realthing/playerhand.gd" id="4_m2ej7"]
 [ext_resource type="PackedScene" uid="uid://bkejwjk14tp6g" path="res://scenes/realthing/deck.tscn" id="4_sq6sj"]
 [ext_resource type="Texture2D" uid="uid://cpejbvliiqsyk" path="res://asset/ui/coinflip-Sheet.png" id="6_0e23b"]
+[ext_resource type="StyleBox" uid="uid://dh7kwoehu6v4a" path="res://asset/ui/paneltheme.tres" id="7_d7yle"]
+[ext_resource type="SpriteFrames" uid="uid://dnklxfrf0y1hk" path="res://asset/ui/reinasheet.tres" id="7_yulgv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e23b"]
 atlas = ExtResource("6_0e23b")
@@ -188,91 +189,91 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("options/opp:modulate")
+tracks/3/path = NodePath("options/both:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("options/opp:position")
+tracks/4/path = NodePath("options/both:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-296, -12)]
+"values": [Vector2(-72, -12)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("options/opp:visible")
+tracks/5/path = NodePath("options/both:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("options/both:visible")
+tracks/6/path = NodePath("options/result:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(-240, -464)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("options/both:position")
+tracks/7/path = NodePath("options/result:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-72, -12)]
+"update": 1,
+"values": [false]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("options/both:modulate")
+tracks/8/path = NodePath("options/result:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("options/result:position")
+tracks/9/path = NodePath("options/option:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-240, -464)]
+"values": [Vector2(24, -400)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("options/result:visible")
+tracks/10/path = NodePath("options/option:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -284,46 +285,10 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("options/result:modulate")
+tracks/11/path = NodePath("options/option:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("options/option:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(24, -400)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("options/option:visible")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("options/option:modulate")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -407,45 +372,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-256, 46), Vector2(-256, 16)]
-}
-
-[sub_resource type="Animation" id="Animation_d7yle"]
-resource_name = "opp"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("options/opp:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("options/opp:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-296, -12), Vector2(-296, -24)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("options/opp:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_lmjih"]
@@ -571,37 +497,36 @@ _data = {
 &"RESET": SubResource("Animation_yulgv"),
 &"both": SubResource("Animation_o7uj6"),
 &"ondeck": SubResource("Animation_1oyn6"),
-&"opp": SubResource("Animation_d7yle"),
 &"question": SubResource("Animation_lmjih"),
 &"result": SubResource("Animation_w0jpa"),
 &"you": SubResource("Animation_0e23b")
 }
 
-[node name="limine" type="Control"]
+[node name="limine" type="Control" unique_id=249420882]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_qqrou")
 
-[node name="coinflip" type="Node2D" parent="."]
+[node name="coinflip" type="Node2D" parent="." unique_id=1520833244]
 
-[node name="playercoin" type="AnimatedSprite2D" parent="coinflip"]
+[node name="playercoin" type="AnimatedSprite2D" parent="coinflip" unique_id=126080379]
 position = Vector2(112, 0)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_lpcnu")
 animation = &"tails"
 
-[node name="oppcoin" type="AnimatedSprite2D" parent="coinflip"]
+[node name="oppcoin" type="AnimatedSprite2D" parent="coinflip" unique_id=117464168]
 position = Vector2(-112, 0)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_lpcnu")
 animation = &"heads"
 
-[node name="point" type="Sprite2D" parent="coinflip"]
+[node name="point" type="Sprite2D" parent="coinflip" unique_id=47535867]
 position = Vector2(296, 156)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_yulgv")
 
-[node name="Label" type="Label" parent="coinflip/point"]
+[node name="Label" type="Label" parent="coinflip/point" unique_id=2083769411]
 offset_left = -56.0
 offset_top = -16.0
 offset_right = -16.0
@@ -610,47 +535,47 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="camera" type="Camera2D" parent="."]
+[node name="camera" type="Camera2D" parent="." unique_id=1509492060]
 
-[node name="playerhand" type="Node2D" parent="."]
+[node name="playerhand" type="Node2D" parent="." unique_id=834386896]
 script = ExtResource("4_m2ej7")
 
-[node name="deck" parent="." instance=ExtResource("4_sq6sj")]
+[node name="deck" parent="." unique_id=2097155273 instance=ExtResource("4_sq6sj")]
 position = Vector2(-288, 108)
 scale = Vector2(2, 2)
 
-[node name="cardslot" type="Node2D" parent="."]
+[node name="cardslot" type="Node2D" parent="." unique_id=2051781287]
 
-[node name="foropp" type="Node2D" parent="cardslot"]
+[node name="foropp" type="Node2D" parent="cardslot" unique_id=370088879]
 position = Vector2(-36, 0)
 
-[node name="forplayer" type="Node2D" parent="cardslot"]
+[node name="forplayer" type="Node2D" parent="cardslot" unique_id=448428271]
 position = Vector2(36, 0)
 
-[node name="cardhandler" type="Node2D" parent="."]
+[node name="cardhandler" type="Node2D" parent="." unique_id=1630155983]
 script = ExtResource("4_0e23b")
 
-[node name="opphand" type="Node2D" parent="."]
-script = ExtResource("3_m2ej7")
+[node name="opphand" type="Node2D" parent="." unique_id=1018353660]
 
-[node name="tutorlayer" type="CanvasLayer" parent="."]
+[node name="tutorlayer" type="CanvasLayer" parent="." unique_id=1245868007]
 
-[node name="sampah" type="Node2D" parent="."]
-position = Vector2(-288, -64)
+[node name="sampah" type="Node2D" parent="." unique_id=656815424]
+position = Vector2(-288, 0)
 
-[node name="options" type="Control" parent="."]
+[node name="options" type="Control" parent="." unique_id=1657941042]
 anchors_preset = 0
 
-[node name="you" type="Panel" parent="options"]
+[node name="you" type="Panel" parent="options" unique_id=1609441784]
 visible = false
 layout_mode = 0
 offset_left = 152.0
 offset_top = -12.0
 offset_right = 296.0
 offset_bottom = 28.0
+theme_override_styles/panel = ExtResource("7_d7yle")
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="options/you"]
+[node name="Label" type="Label" parent="options/you" unique_id=1430754834]
 layout_mode = 0
 offset_right = 144.0
 offset_bottom = 40.0
@@ -658,24 +583,32 @@ text = "you win"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="opp" type="Panel" parent="options"]
-visible = false
+[node name="opp" type="Panel" parent="options" unique_id=973233053]
 layout_mode = 0
-offset_left = -296.0
-offset_top = -12.0
-offset_right = -152.0
-offset_bottom = 28.0
-metadata/_edit_lock_ = true
+offset_left = -320.0
+offset_top = -176.0
+offset_right = -96.0
+offset_bottom = -64.0
+theme_override_styles/panel = ExtResource("7_d7yle")
 
-[node name="Label" type="Label" parent="options/opp"]
+[node name="Label" type="Label" parent="options/opp" unique_id=1075308114]
 layout_mode = 0
-offset_right = 144.0
-offset_bottom = 40.0
-text = "your opp"
+offset_left = 114.0
+offset_top = 2.0
+offset_right = 222.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="both" type="Panel" parent="options"]
+[node name="portrait" type="AnimatedSprite2D" parent="options/opp" unique_id=1020219303]
+position = Vector2(55.99999, 56.000004)
+scale = Vector2(3.0000002, 2.9999998)
+sprite_frames = ExtResource("7_yulgv")
+animation = &"kedip"
+frame_progress = 0.28446665
+
+[node name="both" type="Panel" parent="options" unique_id=2008469924]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
@@ -683,8 +616,9 @@ offset_left = -72.0
 offset_top = -12.0
 offset_right = 72.0
 offset_bottom = 28.000076
+theme_override_styles/panel = ExtResource("7_d7yle")
 
-[node name="Label" type="Label" parent="options/both"]
+[node name="Label" type="Label" parent="options/both" unique_id=918825090]
 layout_mode = 1
 offset_right = 144.0
 offset_bottom = 40.0
@@ -694,15 +628,16 @@ switch cards anjay"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="result" type="Panel" parent="options"]
+[node name="result" type="Panel" parent="options" unique_id=1070752366]
 visible = false
 layout_mode = 0
 offset_left = -240.0
 offset_top = -464.0
 offset_right = 240.0
 offset_bottom = -240.0
+theme_override_styles/panel = ExtResource("7_d7yle")
 
-[node name="Label" type="Label" parent="options/result"]
+[node name="Label" type="Label" parent="options/result" unique_id=677911786]
 layout_mode = 0
 offset_top = 48.0
 offset_right = 480.0
@@ -712,7 +647,7 @@ pack it up"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="retry" type="Button" parent="options/result"]
+[node name="retry" type="Button" parent="options/result" unique_id=411350759]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 144.0
@@ -720,7 +655,7 @@ offset_right = 192.0
 offset_bottom = 176.0
 text = "RETRY"
 
-[node name="return" type="Button" parent="options/result"]
+[node name="return" type="Button" parent="options/result" unique_id=237755998]
 layout_mode = 0
 offset_left = 288.0
 offset_top = 144.0
@@ -728,15 +663,16 @@ offset_right = 416.0
 offset_bottom = 176.0
 text = "RETURN"
 
-[node name="option" type="Panel" parent="options"]
+[node name="option" type="Panel" parent="options" unique_id=2134360245]
 visible = false
 layout_mode = 0
 offset_left = 24.0
 offset_top = -400.0
 offset_right = 200.0
 offset_bottom = -272.0
+theme_override_styles/panel = ExtResource("7_d7yle")
 
-[node name="Label" type="Label" parent="options/option"]
+[node name="Label" type="Label" parent="options/option" unique_id=1775552781]
 layout_mode = 0
 offset_right = 176.0
 offset_bottom = 64.0
@@ -746,7 +682,7 @@ destroy opponent's card?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="yes" type="Button" parent="options/option"]
+[node name="yes" type="Button" parent="options/option" unique_id=1338512773]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 64.0
@@ -754,7 +690,7 @@ offset_right = 152.0
 offset_bottom = 96.0
 text = "YES"
 
-[node name="no" type="Button" parent="options/option"]
+[node name="no" type="Button" parent="options/option" unique_id=1339939346]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 96.0
@@ -762,15 +698,11 @@ offset_right = 152.0
 offset_bottom = 128.0
 text = "NO"
 
-[node name="anim" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_w0jpa")
-}
+[node name="anim" type="AnimationPlayer" parent="." unique_id=866297885]
+libraries/ = SubResource("AnimationLibrary_w0jpa")
 
-[node name="animdec" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_w0jpa")
-}
+[node name="animdec" type="AnimationPlayer" parent="." unique_id=572922714]
+libraries/ = SubResource("AnimationLibrary_w0jpa")
 
 [connection signal="pressed" from="options/result/retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="options/result/return" to="." method="_on_return_pressed"]

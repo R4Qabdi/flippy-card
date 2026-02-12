@@ -14,13 +14,16 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		var option = mouse_raycast()
 		if event.is_pressed():
+			sound.play_sound("select")
 			if option:
 				if option.name == "tutor":
-					get_tree().change_scene_to_file("res://scenes/realthing/thegame.tscn")
+					get_tree().change_scene_to_file("res://scenes/realthing/tutorial.tscn")
 					#$tutor/select.visible = true
 				if option.name == "limine":
-					get_tree().change_scene_to_file("res://scenes/core/tests.tscn")
+					global.opp_name = "limine"
+					get_tree().change_scene_to_file("res://scenes/realthing/thegame.tscn")
 				if option.name == "reina":
+					global.opp_name = "reina"
 					get_tree().change_scene_to_file("res://scenes/realthing/thegame.tscn")
 
 

@@ -1,5 +1,5 @@
 extends Node
-
+var opp_name:String =""
 var playerpoint = 0
 #var cards_in_deck_name = [
   #"AS","2S","3S","4S","5S","6S","7S","8S","9S","10S","JS","QS","KS",

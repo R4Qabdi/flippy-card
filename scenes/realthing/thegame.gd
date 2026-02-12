@@ -3,8 +3,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	RenderingServer.set_default_clear_color(Color("#1f1e33"))
-	
+	RenderingServer.set_default_clear_color(Color("6c6a9bff"))
+
 
 func delay(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://scenes/realthing/menu.tscn")
 	if Input.is_action_just_pressed("debug-m"):
 		print("jumlah kartu dalam deck : "+str(global.cards_in_deck_id.size()))
-		print_tree_pretty()
+		#print_tree_pretty()
 	if Input.is_action_just_pressed("debug-n"):
 		print($playerhand.cards_in_opp_hand)
 		print($playerhand.cards_in_hand)

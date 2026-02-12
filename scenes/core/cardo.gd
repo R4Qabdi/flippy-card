@@ -72,7 +72,7 @@ const CARD_DATA = {
 
 
 func _ready() -> void:
-	get_parent().connect_card_signals(self)
+	#get_parent().connect_card_signals(self)
 	$textures.frame = id
 	if !is_facing_up:
 		$textures.frame = 55
@@ -112,7 +112,10 @@ func change_facing():
 		$textures.frame = 55
 
 func change_area_size(width):
-	$area/box.shape.size.x=width 
+	$area/box.scale.x = width / 28.0
+	print(width)
+	print($area/box.scale.x)
+	$area/box.position.x = -14+(width/2)
 
 func slide(node, from, to, duration) -> Tween:
 	node.position = from

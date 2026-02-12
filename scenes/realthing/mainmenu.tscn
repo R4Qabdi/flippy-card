@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://jmx8mgdfjcox"]
+[gd_scene format=3 uid="uid://jmx8mgdfjcox"]
 
 [ext_resource type="Texture2D" uid="uid://cu3fhs5ofppvt" path="res://asset/ui/flippy cards prototype.png" id="1_3xxnu"]
 [ext_resource type="Script" uid="uid://dbm0nfctrkxe3" path="res://scenes/realthing/mainmenu.gd" id="1_ra62s"]
 
-[node name="mainmenu" type="Control"]
+[node name="mainmenu" type="Control" unique_id=2018749504]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_ra62s")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=511907229]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,10 +17,10 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_3xxnu")
 
-[node name="camera" type="Camera2D" parent="."]
+[node name="camera" type="Camera2D" parent="." unique_id=1098656852]
 position = Vector2(320, 180)
 
-[node name="start" type="Button" parent="."]
+[node name="start" type="Button" parent="." unique_id=1491706447]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "PLAY"
 
-[node name="exit" type="Button" parent="."]
+[node name="exit" type="Button" parent="." unique_id=1529914234]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b373236v81n27"]
+[gd_scene format=3 uid="uid://b373236v81n27"]
 
 [ext_resource type="Script" uid="uid://dbm0nfctrkxe3" path="res://scenes/realthing/mainmenu.gd" id="1_38son"]
 [ext_resource type="Texture2D" uid="uid://1yevllm4cx2n" path="res://asset/ui/something textlargen.png" id="2_ghr5c"]
@@ -7,12 +7,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ghr5c"]
 size = Vector2(182, 312)
 
-[node name="menu" type="Control"]
+[node name="menu" type="Control" unique_id=1240573523]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_38son")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=474043177]
 layout_mode = 1
 offset_left = -320.0
 offset_top = -180.0
@@ -20,20 +20,20 @@ offset_right = 320.0
 offset_bottom = 180.0
 texture = ExtResource("2_ghr5c")
 
-[node name="camera" type="Camera2D" parent="."]
+[node name="camera" type="Camera2D" parent="." unique_id=1212391170]
 
-[node name="tutor" type="Area2D" parent="."]
+[node name="tutor" type="Area2D" parent="." unique_id=990283671]
 
-[node name="box" type="CollisionShape2D" parent="tutor"]
+[node name="box" type="CollisionShape2D" parent="tutor" unique_id=2044063727]
 position = Vector2(-205, 0)
 shape = SubResource("RectangleShape2D_ghr5c")
 
-[node name="select" type="Sprite2D" parent="tutor"]
+[node name="select" type="Sprite2D" parent="tutor" unique_id=1037205680]
 visible = false
 position = Vector2(-204, -2)
 texture = ExtResource("3_jocsv")
 
-[node name="Label" type="Label" parent="tutor"]
+[node name="Label" type="Label" parent="tutor" unique_id=1506572677]
 offset_left = -278.0
 offset_top = 74.0
 offset_right = -142.0
@@ -43,41 +43,40 @@ show you how to
 play this game."
 vertical_alignment = 1
 
-[node name="limine" type="Area2D" parent="."]
+[node name="limine" type="Area2D" parent="." unique_id=245989854]
 
-[node name="box" type="CollisionShape2D" parent="limine"]
+[node name="box" type="CollisionShape2D" parent="limine" unique_id=1368553315]
 shape = SubResource("RectangleShape2D_ghr5c")
 
-[node name="select" type="Sprite2D" parent="limine"]
+[node name="select" type="Sprite2D" parent="limine" unique_id=964649068]
 visible = false
 texture = ExtResource("3_jocsv")
 
-[node name="Label" type="Label" parent="limine"]
+[node name="Label" type="Label" parent="limine" unique_id=1704619304]
 offset_left = -76.0
 offset_top = 74.0
 offset_right = 76.0
 offset_bottom = 149.0
-text = "She plays random
-moves. 
-Easy to play against"
+text = "She’s here for the 
+fun of the game!"
 vertical_alignment = 1
 
-[node name="reina" type="Area2D" parent="."]
+[node name="reina" type="Area2D" parent="." unique_id=488188350]
 
-[node name="box" type="CollisionShape2D" parent="reina"]
+[node name="box" type="CollisionShape2D" parent="reina" unique_id=297732226]
 position = Vector2(205, 0)
 shape = SubResource("RectangleShape2D_ghr5c")
 
-[node name="select" type="Sprite2D" parent="reina"]
+[node name="select" type="Sprite2D" parent="reina" unique_id=1405851444]
 visible = false
 position = Vector2(204, 0)
 texture = ExtResource("3_jocsv")
 
-[node name="Label" type="Label" parent="reina"]
+[node name="Label" type="Label" parent="reina" unique_id=790899512]
 offset_left = 128.0
 offset_top = 76.0
-offset_right = 288.0
-offset_bottom = 125.0
-text = "She plans her moves.
-A tougher opponent"
+offset_right = 292.0
+offset_bottom = 150.0
+text = "She takes this game
+a bit seriously"
 vertical_alignment = 1

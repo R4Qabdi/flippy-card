@@ -6,22 +6,37 @@ var stolencard
 var randpick
 var situation
 var playercoins:int=0
+var oppname = global.opp_name
 func _ready() -> void:
-	pass # Replace with function body.
+	if oppname == "limine":
+		$"../options/opp/portrait".sprite_frames = preload("res://asset/ui/liminesheet.tres")
+	elif oppname == "reina":
+		$"../options/opp/portrait".sprite_frames = preload("res://asset/ui/reinasheet.tres")
+	match oppname:
+		"limine":
+			$"../options/opp/Label".text="Lets's play fair \nand have fun!"
+			$"../options/opp/portrait".play("senang")
+		"reina":
+			$"../options/opp/Label".text="I won't go easy \non you"
+			$"../options/opp/portrait".play("yap")
+			
+	await delay(2)
+	$"../options/opp/Label".text=""
+	$"../options/opp/portrait".play("idle")
 
-func connect_card_signals(card):
+#func connect_card_signals(card):
 	#ts doesnt need to connect, these signal thing is broken af
-	card.connect("hover", on_card_hover)
-	card.connect("hover_exit", on_card_exit_hover)
+	#card.connect("hover", on_card_hover)
+	#card.connect("hover_exit", on_card_exit_hover)
 
-func on_card_hover(card):pass
+#func on_card_hover(card):pass
 	#broken shiiii
 	
 	#print("hovering "+card.name+" |posisinya "+str(card.get_node("textures").position.y))
 	#card.get_node("textures").position.y = 0
 	#slide(card.get_node("textures"), card.get_node("textures").position,Vector2(card.get_node("textures").position.x,card.get_node("textures").position.y-10),0.2)
 
-func on_card_exit_hover(card):pass
+#func on_card_exit_hover(card):pass
 	#broken shiiii
 	
 	#print("unhovering "+card.name+" |posisinya "+str(card.get_node("textures").position.y))
@@ -41,6 +56,7 @@ func _input(event: InputEvent) -> void:
 			var card = mouse_raycast()
 			#print(card)
 			if card :
+				sound.play_sound("select")
 				if situation == "player steal card" or situation =="player destroy and steal card":
 					$"../playerhand".cards_in_opp_hand.erase(card)
 					$"../playerhand".update_new_card_pos_for_opp()
@@ -49,12 +65,10 @@ func _input(event: InputEvent) -> void:
 					$"../playerhand".cards_in_hand.append(card)
 					$"../playerhand".update_new_card_pos()
 					
+					checkwin()
 					for n in $"../playerhand".cards_in_opp_hand:
 						n.selectable = false
-					for i in $"../playerhand".cards_in_hand:
-						i.selectable = true
-					checkwin()
-					
+					enable_all_cards()
 					situation = "player stole card"
 				else:
 					playerbettedcard = card
@@ -62,8 +76,8 @@ func _input(event: InputEvent) -> void:
 					card.get_node("textures/hover").visible = false
 					
 					handle(card, "player")
-					randpick = randi_range(0,$"../playerhand".cards_in_opp_hand.size()-1)
-					oppbettedcard = $"../playerhand".cards_in_opp_hand[randpick]
+					#randpick = randi_range(0,$"../playerhand".cards_in_opp_hand.size()-1)
+					oppbettedcard = $"../playerhand".cards_in_opp_hand.pick_random()
 					
 					handle(oppbettedcard,"opp")
 					await delay(1)
@@ -104,11 +118,15 @@ func coinflip():
 		playerbettedcard.change_facing()
 		$"../playerhand".update_new_card_pos()
 		$"../playerhand".update_new_card_pos_for_opp()
+		sound.play_sound("slide")
+		enable_all_cards()
 		checkwin()
 	if !cfp and !cfo:
 		notif("both lose",null,null)
 		slide(playerbettedcard, playerbettedcard.position, $"../sampah".position, 0.2)
 		slide(oppbettedcard, oppbettedcard.position, $"../sampah".position, 0.2)
+		sound.play_sound("boom")
+		enable_all_cards()
 		checkwin()
 	
 	if cfp and !cfo:
@@ -125,11 +143,13 @@ func coinflip():
 			$"../options/option/Label".text = "Do you want to destroy\n your opponent's card?(-1 coins)"
 			situation ="player destroy card"
 			$"../animdec".play("question")
+			enable_all_cards()
 		elif playerbettedcard.points == 2:
 			playercoins +=2
 			$"../options/option/Label".text = "Do you want to take\n your opponent's card?(-2 coins)"
 			situation ="player take card"
 			$"../animdec".play("question")
+			enable_all_cards()
 		elif playerbettedcard.points == 3:
 			playercoins +=3
 			oppbettedcard.change_facing()
@@ -146,9 +166,11 @@ func coinflip():
 			$"../animdec".play("question")
 		else:
 			slide(oppbettedcard, oppbettedcard.position, $"../sampah".position, 0.2)
+		if oppname == "limine":
+			opp_say("Youch..",false)
+		elif oppname == "reina":
+			opp_say("Woops..",false)
 		$"../playerhand".update_new_card_pos()
-	$"../coinflip/point/Label".text = str(playercoins)
-
 	if !cfp and cfo:
 		notif("you lose",str(oppbettedcard.points),"opponent")
 		#slide(playerbettedcard, playerbettedcard.position, $"../sampah".position, 0.2)
@@ -163,12 +185,12 @@ func coinflip():
 			if oppbettedcard.points == 1:
 				print("anjay selebew")
 				slide(playerbettedcard, playerbettedcard.position, $"../sampah".position, 0.2)
-				
+				sound.play_sound("boom")
 			elif oppbettedcard.points == 2:
 				playerbettedcard.change_facing()
 				$"../playerhand".cards_in_opp_hand.append(playerbettedcard)
 				$"../playerhand".update_new_card_pos_for_opp()
-				
+				sound.play_sound("slide")
 			elif oppbettedcard.points == 3:
 				$"../playerhand".cards_in_hand.append(playerbettedcard)
 				#playerbettedcard.change_facing()
@@ -179,10 +201,14 @@ func coinflip():
 					randomcard.change_facing()
 					$"../playerhand".cards_in_opp_hand.append(randomcard)
 					$"../playerhand".cards_in_hand.erase(randomcard)
+				if oppname=="reina":
+					opp_say("I'll take this",true)
+				sound.play_sound("slide")
 				$"../playerhand".update_new_card_pos()
 				$"../playerhand".update_new_card_pos_for_opp()
 				
 			elif oppbettedcard.points == 4:
+				sound.play_sound("boom")
 				slide(playerbettedcard, playerbettedcard.position, $"../sampah".position, 0.2)
 				await delay(1)
 				if $"../playerhand".cards_in_hand.size() > 0:
@@ -190,18 +216,64 @@ func coinflip():
 					randomcard.change_facing()
 					$"../playerhand".cards_in_opp_hand.append(randomcard)
 					$"../playerhand".cards_in_hand.erase(randomcard)
+					
+				if oppname=="reina":
+					opp_say("I'll take this",true)
+				sound.play_sound("slide")
 				$"../playerhand".update_new_card_pos()
 				$"../playerhand".update_new_card_pos_for_opp()
 			else:
 				slide(playerbettedcard, playerbettedcard.position, $"../sampah".position, 0.2)
+			enable_all_cards()
+			if oppname =="limine":
+				opp_say("Gotcha!",true)
+			elif oppname=="reina":pass
+				#opp_say("Takes Takes!",true)
 		else: print("limine lagi ga main woilah wkwkwkwkw")
+		
 		checkwin()
 		
+	$"../coinflip/point/Label".text = str(playercoins)
+	opp_express()
 
+func opp_express():
+	match oppname:
+		"limine":
+			if $"../playerhand".cards_in_hand.size()-1>$"../playerhand".cards_in_opp_hand.size():
+				$"../options/opp/portrait".play("keringat")
+			elif $"../playerhand".cards_in_hand.size()+1<$"../playerhand".cards_in_opp_hand.size():
+				$"../options/opp/portrait".play("senang")
+			else:$"../options/opp/portrait".play("idle")
+		"reina":
+			if $"../playerhand".cards_in_hand.size()-1>$"../playerhand".cards_in_opp_hand.size():
+				$"../options/opp/portrait".play("keringat")
+			elif $"../playerhand".cards_in_hand.size()+1<$"../playerhand".cards_in_opp_hand.size():
+				$"../options/opp/portrait".play("senang")
+			else:$"../options/opp/portrait".play("idle")
+func opp_say(text, is_happy):
+	match oppname:
+		"limine":
+			if is_happy:
+				$"../options/opp/portrait".play("senang")
+			else:
+				print("aku sedih")
+				$"../options/opp/portrait".play("yap")
+			$"../options/opp/Label".text = text
+		"reina":
+			if is_happy:
+				$"../options/opp/portrait".play("senang")
+			else:
+				print("aku sedih")
+				$"../options/opp/portrait".play("yap")
+			$"../options/opp/Label".text = text
+	await delay(2)
+	opp_express()
+	$"../options/opp/Label".text = ""
+			
 func checkwin():
-	for i in $"../playerhand".cards_in_hand:
+	#for i in $"../playerhand".cards_in_hand:
 		#print($"../playerhand".cards_in_hand[i].selectable)
-		i.selectable = true
+		#i.selectable = false
 		#print($"../playerhand".cards_in_hand[i].selectable)
 	
 	if $"../playerhand".cards_in_hand.size() == 0 and $"../playerhand".cards_in_opp_hand.size() == 0 :
@@ -221,6 +293,9 @@ func checkwin():
 func disable_all_cards():
 	for i in $"../playerhand".cards_in_hand:
 		i.selectable = false
+func enable_all_cards():
+	for i in $"../playerhand".cards_in_hand:
+		i.selectable = true
 
 func _on_yes_pressed() -> void:
 	player_decision(true)
@@ -228,6 +303,7 @@ func _on_yes_pressed() -> void:
 	$"../anim".queue("RESET")
 
 func _on_no_pressed() -> void:
+	sound.play_sound("coin")
 	player_decision(false)
 	$"../anim".play_backwards("question")
 	$"../anim".queue("RESET")
@@ -236,6 +312,7 @@ func player_decision(agree):
 	match situation:
 		"player destroy card":
 			if agree:
+				sound.play_sound("boom")
 				playercoins -= 1
 				print("hancur lo")
 				slide(oppbettedcard, oppbettedcard.position, $"../sampah".position, 0.2)
@@ -250,6 +327,7 @@ func player_decision(agree):
 				situation = null
 		"player take card":
 			if agree:
+				sound.play_sound("slide")
 				playercoins -= 2
 				print("kuambil lo")
 				oppbettedcard.selectable = true
@@ -280,6 +358,7 @@ func player_decision(agree):
 				$"../playerhand".update_new_card_pos_for_opp()
 		"player destroy and steal card":
 			if agree:
+				sound.play_sound("boom")
 				playercoins -= 4
 				print("double action lo")
 				slide(oppbettedcard, oppbettedcard.position, $"../sampah".position, 0.2)
@@ -305,18 +384,21 @@ func winner():
 	$"../anim".play("RESET")
 	$"../animdec".play("RESET")
 	$"../options/result/Label".text = "you just won against your opponent!\n now what?"
+	opp_say("Well played...", false)
 	$"../anim".queue("result")
 func loser():
 	print("you are lossaa")
 	$"../anim".play("RESET")
 	$"../animdec".play("RESET")
-	$"../options/result/Label".text = "you just lost >~>\n now what?"
+	$"../options/result/Label".text = "you just lost >~>\n just remember you can always try again"
+	opp_say("Good game!", true)
 	$"../anim".queue("result")
 func tie():
 	print("you are lossaa")
 	$"../anim".play("RESET")
 	$"../animdec".play("RESET")
 	$"../options/result/Label".text = "it's a tie, i never thought of this would happen\n now what?"
+	opp_say("Wow!", true)
 	$"../anim".queue("result")
 
 func notif(state, msg, who):
@@ -350,8 +432,9 @@ func handle(card, who):
 			playerbettedcard.get_node("textures").position.y = 0
 			slide(card, card.position, $"../cardslot/forplayer".position, 0.2)
 		"opp":
-			$"../playerhand".cards_in_opp_hand[randpick].change_facing()
-			$"../playerhand".cards_in_opp_hand.erase($"../playerhand".cards_in_opp_hand[randpick])
+			#$"../playerhand".cards_in_opp_hand[randpick].change_facing()
+			oppbettedcard.change_facing()
+			$"../playerhand".cards_in_opp_hand.erase(oppbettedcard)
 			#for i in range(0, $"../playerhand".cards_in_opp_hand.size()):
 				#$"../playerhand".cards_in_opp_hand[i].selectable = false
 			$"../playerhand".update_new_card_pos_for_opp()

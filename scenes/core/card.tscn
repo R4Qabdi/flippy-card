@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://dip5c3ffnata0"]
+[gd_scene format=3 uid="uid://dip5c3ffnata0"]
 
 [ext_resource type="Script" uid="uid://cgbppg611mdix" path="res://scenes/core/cardo.gd" id="1_6u4wf"]
 [ext_resource type="Texture2D" uid="uid://b0c6vaj6h0k6a" path="res://asset/cardset/smallc/SmallCdeck1to1-Qwenty.png" id="1_d81rb"]
@@ -407,26 +407,26 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01co5"]
 size = Vector2(28, 48)
 
-[node name="card" type="Node2D"]
+[node name="card" type="Node2D" unique_id=2047355559]
 scale = Vector2(2, 2)
 script = ExtResource("1_6u4wf")
 
-[node name="textures" type="AnimatedSprite2D" parent="."]
+[node name="textures" type="AnimatedSprite2D" parent="." unique_id=1702356418]
 sprite_frames = SubResource("SpriteFrames_fg4qf")
 animation = &"textures"
 
-[node name="hover" type="Sprite2D" parent="textures"]
+[node name="hover" type="Sprite2D" parent="textures" unique_id=881151246]
 visible = false
 modulate = Color(0, 1, 1, 1)
 position = Vector2(-7.8678124e-07, 4.172325e-07)
 scale = Vector2(0.15, 0.15151516)
 texture = ExtResource("2_1d3j5")
 
-[node name="area" type="Area2D" parent="."]
+[node name="area" type="Area2D" parent="." unique_id=564194870]
 collision_layer = 2
 collision_mask = 2
 
-[node name="box" type="CollisionShape2D" parent="area"]
+[node name="box" type="CollisionShape2D" parent="area" unique_id=731721350]
 shape = SubResource("RectangleShape2D_01co5")
 
 [connection signal="mouse_entered" from="area" to="." method="_on_area_2d_mouse_entered"]

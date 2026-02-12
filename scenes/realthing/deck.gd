@@ -15,6 +15,8 @@ signal deckexithover
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.is_pressed() and is_hover:
+			sound.play_sound("select")
 		if event.is_pressed() and is_hover and !on_cooldown:
 			if global.cards_in_deck_id.size() > 0:
 				if global.cards_in_deck_id.size() >= 39 and global.cards_in_deck_id.size() <= 52:
@@ -26,8 +28,7 @@ func _input(event: InputEvent) -> void:
 				elif global.cards_in_deck_id.size() >= 1 and global.cards_in_deck_id.size() <= 13:
 					$textures.frame = 3
 				if $"../cardhandler".playercoins > 0 :
-					var randomfromdeck = randi_range(0, global.cards_in_deck_id.size()-1)
-					$"../playerhand".draw_card(global.cards_in_deck_id[randomfromdeck], 1)
+					$"../playerhand".draw_card(global.cards_in_deck_id.pop_at(randi_range(0,global.cards_in_deck_id.size()-1)), 1)
 					$"../cardhandler".playercoins -= 1
 					$"../playerhand".enable_cards()
 					$"../coinflip/point/Label".text = str($"../cardhandler".playercoins)

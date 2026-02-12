@@ -4,11 +4,11 @@ var cards_in_hand = []
 var cards_in_opp_hand = []
 var CARD_WIDTH = 56
 const HAND_YPOS_OFFSET = 125
-const HAND_XPOS_OFFSET = 100
-const HAND_YPOS_OFFSET_OPP = -125
+const HAND_XPOS_OFFSET = 140
+const HAND_YPOS_OFFSET_OPP = -120
 const MARGIN_X =0
 
-const DRAW_AMOUNT = 8
+const DRAW_AMOUNT = 5
 
 var viewport_rect_x
 
@@ -20,14 +20,14 @@ func _ready() -> void:
 		draw_card(global.cards_in_deck_id.pop_at(randi_range(0, global.cards_in_deck_id.size()-1)), 1)
 		#draw_card(14,1)
 		#draw_card(11,1)
-		global.playerhand = cards_in_hand
+		#global.playerhand = cards_in_hand
 		#global.cards_in_deck_id.remove_at(randomfromdeck)
 		update_deck()
 		await delay(0.2)
 		#randomfromdeck = randi_range(0, global.cards_in_deck_id.size()-1)
 		draw_card(global.cards_in_deck_id.pop_at(randi_range(0, global.cards_in_deck_id.size()-1)), 2)
 		#draw_card(14,2)
-		global.opphand = cards_in_opp_hand
+		#global.opphand = cards_in_opp_hand
 		#global.cards_in_deck_id.remove_at(randomfromdeck)
 		update_deck()
 		await delay(0.2)
@@ -36,7 +36,7 @@ func _ready() -> void:
 				
 
 func draw_card(id,forwho):
-	
+	sound.play_sound("slide")
 	var cardscene = preload("res://scenes/core/card.tscn")
 	var newcard = cardscene.instantiate()
 	#unewcard=newcard
@@ -71,9 +71,9 @@ func update_deck():
 		$"../deck".visible = false
 
 func update_new_card_pos():
-	CARD_WIDTH = 400/cards_in_hand.size()
+	CARD_WIDTH = 400/(cards_in_hand.size()+1)
+	var totalwidth =400
 	for i in cards_in_hand.size():
-		var totalwidth =400
 		var x_offset = i * CARD_WIDTH - totalwidth/2 +HAND_XPOS_OFFSET-56
 		var finalpos = Vector2(x_offset,HAND_YPOS_OFFSET)
 		#var totalwidth = cards_in_hand.size()*(CARD_WIDTH + MARGIN_X)
@@ -83,14 +83,20 @@ func update_new_card_pos():
 		#print(x_offset)
 		#print("kartu biasa")
 		#ganti anunya biar bisa dia di ambil tanpa ambil yang lain aduhai
-		var ukuran 
-		if cards_in_hand.size()>0:
-			#print(cards_in_hand[cards_in_hand.size()-1])
-			cards_in_hand[cards_in_hand.size()-1].change_area_size(12)
+		#print("iterasi : "+str(i))
+		#print(cards_in_hand.size()-1)
+		cards_in_hand[i].change_area_size(min(((totalwidth-(cards_in_hand.size()+1))/(cards_in_hand.size()+1))/2,28))
+		#print(cards_in_hand[cards_in_hand.size()-1])
+		cards_in_hand[cards_in_hand.size()-1].change_area_size(28)
 		slide(cards_in_hand[i],cards_in_hand[i].position,finalpos,0.2)
-		
+	#for i in cards_in_hand.size():
+		#if i == cards_in_hand.size()-1:
+			#cards_in_hand[cards_in_hand.size()-1].change_area_size(28)
+			#print(cards_in_hand[cards_in_hand.size()-1])
+			#print("kepanggil gak?")
+
 func update_new_card_pos_for_opp():
-	CARD_WIDTH = 400/cards_in_opp_hand.size()
+	CARD_WIDTH = 400/(cards_in_opp_hand.size()+1)
 	for i in cards_in_opp_hand.size():
 		var totalwidth =400
 		var x_offset = i * CARD_WIDTH - totalwidth/2 +HAND_XPOS_OFFSET
@@ -101,13 +107,20 @@ func update_new_card_pos_for_opp():
 		#print("kartu lawan")
 		#print("-------"+str(cards_in_opp_hand.size())+"---------")
 		#print(x_offset)
+		
+		cards_in_opp_hand[i].change_area_size(min(((totalwidth-(cards_in_hand.size()+1))/(cards_in_hand.size()+1))/2,28))
+		#print(cards_in_hand[cards_in_hand.size()-1])
+		cards_in_opp_hand[cards_in_opp_hand.size()-1].change_area_size(28)
 		slide(cards_in_opp_hand[i],cards_in_opp_hand[i].position,finalpos,0.2)
 
 func enable_cards():
 	await delay(0.2)
 	for i in cards_in_hand:
 		i.selectable = true
-
+func disable_cards():
+	await delay(0.2)
+	for i in cards_in_hand:
+		i.selectable = false
 func slide(node, from, to, duration) -> Tween:
 	node.position = from
 	var tween = create_tween()

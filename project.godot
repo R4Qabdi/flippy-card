@@ -8,22 +8,31 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="cardmanual"
 run/main_scene="uid://jmx8mgdfjcox"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://djqmk52e1sppt"
 
 [autoload]
 
 global="*res://global.gd"
-sound="*res://sound.gd"
+sound="*uid://dc6kbwy1mjehd"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
@@ -59,3 +68,5 @@ fullscreen={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
